@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Vue</title>
+    <style>
+        .div {
+            width: 70px;
+            height: 70px;
+            border: solid black 1px;
+            display: inline-block;
+        }
+        .pinkBG {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div v-bind:class="vueClass">everything inside the div emelent with id="app" can use data from the Vue instance.</div>
+</div>
+
+
+<script src="./vue.global.js"></script>
+<script>
+    let app = Vue.createApp({
+        data() {
+            return {
+                vueClass: 'pinkBG'
+            }
+        }
+    })
+    app.mount('#app')
+</script>
+</body>
+</html>

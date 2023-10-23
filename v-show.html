@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Learning Vue</title>
+    <style>
+        .div {
+            width: 70px;
+            height: 70px;
+            border: solid black 1px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
 <div id="app">
-    {{ greeting }}
+    <div v-show="showDiv">This div tag can be hidden</div>
 </div>
 
 
 <script src="./vue.global.js"></script>
 <script>
     let app = Vue.createApp({
-        data: function () {
+        data() {
             return {
-                greeting: 'Hello Vue 3'
+                showDiv: false
             }
         }
     })

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Moose</title>
+    <style>
+        #app {
+            border: dashed black 1px;
+            width: 200px;
+            padding: 20px;
+        }
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Example: Count Moose</h1>
+
+<div id="app">
+    {{ count }}
+    <button @click="calculateCount">mmd</button>
+</div>
+<script src="./vue.global.js"></script>
+<script>
+    let app = Vue.createApp({
+        data() {
+            return {
+                count: 0
+            }
+        },
+        methods: {
+            calculateCount() {
+                console.log("mmd")
+                this.count += 2
+            }
+        }
+    })
+    app.mount('#app')
+</script>
+</body>
+</html>

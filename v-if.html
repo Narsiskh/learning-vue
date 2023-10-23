@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Vue</title>
+    <style>
+        .div {
+            width: 70px;
+            height: 70px;
+            border: solid black 1px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p v-if="typeWritersCount>3">
+        in stock
+    </p>
+    <p v-else-if="typeWritersCount>0">
+        very few left!
+    </p>
+    <p v-else>
+        Not in stock
+    </p>
+</div>
+
+
+<script src="./vue.global.js"></script>
+<script>
+    let app = Vue.createApp({
+        data() {
+            return {
+                typeWritersCount: 0
+            }
+        }
+    })
+    app.mount('#app')
+</script>
+</body>
+</html>
