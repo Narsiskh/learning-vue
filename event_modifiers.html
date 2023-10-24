@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Vue</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Vue</title>
+    <style>
+        #app {
+            border: black dashed 1px;
+            width: 200px;
+            padding: 0 20px 20px 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>Click the button to create an alert:</p>
+    <button v-on:click.once="createAlert">Create Alert</button>
+</div>
+
+<script src="./vue.global.js"></script>
+<script>
+    const app = Vue.createApp({
+        methods: {
+            createAlert() {
+                alert("Alert created from button click")
+            }
+        }
+    })
+    app.mount('#app')
+</script>
+</body>
+</html>
